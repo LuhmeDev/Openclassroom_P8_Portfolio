@@ -74,7 +74,7 @@ function Projets() {
               <li className="projet-carte" key={projet.identifiant}>
                 <div className="projet-carte-image">
                   <img
-                    src={projet.image}
+                    src={import.meta.env.BASE_URL + projet.image}
                     alt={projet.texteAlternatif}
                     width="960"
                     height="540"

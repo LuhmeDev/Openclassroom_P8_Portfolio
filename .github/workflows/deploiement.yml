@@ -1,0 +1,56 @@
+# Mise en ligne automatique sur GitHub Pages.
+# À chaque « git push » sur la branche main, GitHub construit le site (npm run build)
+# puis publie le dossier dist à l'adresse https://luhmedev.github.io/Openclassroom_P8_Portfolio/
+# Suivi des déploiements : onglet « Actions » du dépôt sur github.com.
+name: Déploiement sur GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Permet aussi de relancer le déploiement à la main depuis l'onglet « Actions »
+  workflow_dispatch:
+
+# Droits nécessaires pour publier sur GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Si deux push se suivent de près, seul le plus récent est publié
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploiement:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publication.outputs.page_url }}
+    steps:
+      - name: Récupérer le code du dépôt
+        uses: actions/checkout@v7
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Construire le site
+        run: npm run build
+
+      - name: Préparer GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Envoyer le dossier dist
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./dist
+
+      - name: Publier le site
+        id: publication
+        uses: actions/deploy-pages@v5

@@ -18,7 +18,7 @@ function PiedDePage() {
             </a>
           </li>
           <li>
-            <a href="/mentions-legales/">Mentions légales</a>
+            <a href={import.meta.env.BASE_URL + 'mentions-legales/'}>Mentions légales</a>
           </li>
           <li>
             <a href="#haut-de-page">Retour en haut ↑</a>

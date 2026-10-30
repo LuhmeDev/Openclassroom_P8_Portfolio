@@ -62,8 +62,8 @@ function FicheProjet({ projet, fermer }) {
           <figure className="fiche-media">
             {/* preload="none" : la vidéo n'est téléchargée que si on clique sur Lecture.
                 poster : l'image affichée avant la lecture. */}
-            <video controls preload="none" poster={projet.image} width="960" height="540">
-              <source src={projet.video} type="video/mp4" />
+            <video controls preload="none" poster={import.meta.env.BASE_URL + projet.image} width="960" height="540">
+              <source src={import.meta.env.BASE_URL + projet.video} type="video/mp4" />
               Votre navigateur ne lit pas cette vidéo.
             </video>
             <figcaption className="fiche-legende">
@@ -75,7 +75,7 @@ function FicheProjet({ projet, fermer }) {
 
         {projet.video === '' && (
           <figure className="fiche-media">
-            <img src={projet.image} alt={projet.texteAlternatif} width="960" height="540" />
+            <img src={import.meta.env.BASE_URL + projet.image} alt={projet.texteAlternatif} width="960" height="540" />
           </figure>
         )}
 

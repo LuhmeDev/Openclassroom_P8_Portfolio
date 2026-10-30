@@ -15,7 +15,7 @@ function MentionsLegales() {
 
       <header className="mentions-en-tete" id="haut-de-page">
         <div className="mentions-en-tete-barre conteneur">
-          <a className="mentions-retour" href="/">← Retour au portfolio</a>
+          <a className="mentions-retour" href={import.meta.env.BASE_URL}>← Retour au portfolio</a>
         </div>
       </header>
 

@@ -230,7 +230,7 @@ function Contact() {
 
           <p className="contact-mention">
             Vos informations servent uniquement à vous répondre. Elles transitent par le service
-            Formspree. Détails dans les <a href="/mentions-legales/">mentions légales</a>.
+            Formspree. Détails dans les <a href={import.meta.env.BASE_URL + 'mentions-legales/'}>mentions légales</a>.
           </p>
         </form>
       </div>

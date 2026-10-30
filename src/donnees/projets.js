@@ -5,9 +5,10 @@
 // Champs d'un projet :
 // - categorie : doit correspondre à un filtre (Front-End, Back-End, Optimisation, Entreprise)
 // - miseEnAvant : true = carte affichée en premier
-// - image : chemin depuis le dossier public/
+// - image : chemin depuis le dossier public/, sans « / » au début (ex. 'images/projets/projet-kasa.webp') :
+//   les composants ajoutent devant le sous-dossier du site sur GitHub Pages (voir vite.config.js)
 // - lienGithub, lienGithubComplementaire, lienDemo : chaîne vide '' si le lien n'existe pas
-// - video : chemin d'une vidéo de démonstration dans public/videos, '' s'il n'y en a pas
+// - video : chemin d'une vidéo de démonstration dans public/videos, sans « / » au début, '' s'il n'y en a pas
 // - fiche : le contenu de la fenêtre détaillée
 //
 // Chaque affirmation des fiches vient du code des dépôts.
@@ -20,14 +21,14 @@ const listeDesProjets = [
     categorie: 'Entreprise',
     miseEnAvant: true,
     resume: "Application métier qui planifie la maintenance d'un parc d'équipements : échéances récurrentes, campagnes, replanification, suivi de charge et notification des clients.",
-    image: '/images/projets/projet-planning.webp',
+    image: 'images/projets/projet-planning.webp',
     texteAlternatif: "Vue annuelle du planning : interventions par laboratoire et par mois, retards en rouge. Données fictives.",
     technologies: ['JavaScript (modules ES)', 'HTML', 'CSS', 'SQL', 'n8n'],
     donneesFictives: true,
     lienGithub: '',
     lienGithubComplementaire: '',
     lienDemo: '',
-    video: '/videos/demo-planning.mp4',
+    video: 'videos/demo-planning.mp4',
     mentionSansLien: 'Code privé : projet réalisé en entreprise',
     fiche: {
       contexte: "Projet réalisé en entreprise pour un service qui assure la maintenance d'équipements de laboratoire chez des clients industriels. L'application tourne dans le bureau applicatif d'une plateforme low-code, qui fournit les données par des points d'accès HTTP.",
@@ -78,7 +79,7 @@ const listeDesProjets = [
     categorie: 'Front-End',
     miseEnAvant: true,
     resume: 'Application React de location de logements entre particuliers : routage, carrousel de photos, menus déroulants réutilisables.',
-    image: '/images/projets/projet-kasa.webp',
+    image: 'images/projets/projet-kasa.webp',
     texteAlternatif: "Page À propos de l'application Kasa avec ses menus déroulants.",
     technologies: ['React', 'React Router', 'Sass', 'Vite'],
     donneesFictives: false,
@@ -131,7 +132,7 @@ const listeDesProjets = [
     categorie: 'Optimisation',
     miseEnAvant: true,
     resume: "Reprise d'un site existant : images allégées, référencement local, accessibilité et correction de la galerie.",
-    image: '/images/projets/projet-nina-carducci.webp',
+    image: 'images/projets/projet-nina-carducci.webp',
     texteAlternatif: "Page d'accueil du site de la photographe Nina Carducci.",
     technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap'],
     donneesFictives: false,
@@ -189,14 +190,14 @@ const listeDesProjets = [
     categorie: 'Front-End',
     miseEnAvant: true,
     resume: "Portfolio d'architecte dont la galerie et les filtres sont générés depuis une API, avec connexion et gestion des projets.",
-    image: '/images/projets/projet-sophie-bluel.webp',
+    image: 'images/projets/projet-sophie-bluel.webp',
     texteAlternatif: "Galerie de projets de l'architecte Sophie Bluel avec ses filtres par catégorie.",
     technologies: ['JavaScript', 'API Fetch', 'HTML', 'CSS'],
     donneesFictives: false,
     lienGithub: 'https://github.com/LuhmeDev/Sophie-Bluel',
     lienGithubComplementaire: '',
     lienDemo: '',
-    video: '/videos/demo-sophie-bluel.mp4',
+    video: 'videos/demo-sophie-bluel.mp4',
     mentionSansLien: '',
     fiche: {
       contexte: "Projet de formation : rendre dynamique le portfolio d'une architecte d'intérieur à partir d'une API fournie (Node.js, Express, SQLite).",
@@ -245,7 +246,7 @@ const listeDesProjets = [
     categorie: 'Front-End',
     miseEnAvant: false,
     resume: "Intégration responsive de la page d'accueil d'une agence de voyage à partir d'une maquette.",
-    image: '/images/projets/projet-booki.webp',
+    image: 'images/projets/projet-booki.webp',
     texteAlternatif: "Page d'accueil de l'agence de voyage Booki.",
     technologies: ['HTML', 'CSS'],
     donneesFictives: false,
@@ -285,7 +286,7 @@ const listeDesProjets = [
     categorie: 'Back-End',
     miseEnAvant: false,
     resume: 'API REST : inscription et connexion sécurisées, gestion et notation de livres, compression automatique des images.',
-    image: '/images/projets/projet-mon-vieux-grimoire.webp',
+    image: 'images/projets/projet-mon-vieux-grimoire.webp',
     texteAlternatif: "Liste des routes de l'API Mon Vieux Grimoire et de leurs middlewares.",
     technologies: ['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'Sharp'],
     donneesFictives: false,
@@ -293,7 +294,7 @@ const listeDesProjets = [
     lienGithubComplementaire: 'https://github.com/LuhmeDev/Openclassroom_P6_MonVieuxGrimoire_Front_Soutenance',
     lienDemo: '',
     // Vidéo à enregistrer par Kenny : l'API a besoin d'une base MongoDB (Atlas) pour tourner.
-    // Une fois le fichier placé dans public/videos, écrire ici '/videos/demo-mon-vieux-grimoire.mp4'
+    // Une fois le fichier placé dans public/videos, écrire ici 'videos/demo-mon-vieux-grimoire.mp4'
     video: '',
     mentionSansLien: '',
     fiche: {
