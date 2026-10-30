@@ -7,7 +7,7 @@ Direction artistique : **« la salle de montage »**. Le site reprend l'univers 
 (fond sombre, accent ambre, repères timecode, timeline en pistes) pour relier un BTS Audiovisuel
 au métier de développeur.
 
-**En ligne :** [À COMPLÉTER : adresse Vercel]
+**En ligne :** [luhmedev.github.io/Openclassroom_P8_Portfolio](https://luhmedev.github.io/Openclassroom_P8_Portfolio/)
 
 ## Technologies
 
@@ -17,7 +17,7 @@ au métier de développeur.
 | Styles | CSS natif, un fichier par composant | Les variables CSS suffisent, une dépendance de moins que Sass |
 | Animations | CSS natif | Légères, coupées si le visiteur réduit les animations |
 | Formulaire | Formspree | Envoi réel par e-mail sans serveur à coder |
-| Hébergement | Vercel | Relié à GitHub : chaque push met le site à jour |
+| Hébergement | GitHub Pages | Gratuit, et GitHub Actions met le site à jour à chaque push sur main |
 
 Dépendances : `react` et `react-dom`, plus `vite` et `@vitejs/plugin-react` pour le développement. Rien d'autre.
 
@@ -91,13 +91,16 @@ Visé : WCAG 2.2 niveau AA.
 | Lighthouse : accessibilité | 100 | 100 | idem |
 | Lighthouse : bonnes pratiques | 100 | 100 | idem |
 | Lighthouse : SEO | 100 | 100 | idem |
-| Lighthouse en ligne | [À MESURER] | [À MESURER] | Navigation privée, sur l'adresse définitive |
+| Lighthouse en ligne (4 catégories) | 100 | 100 | Navigation privée, sur GitHub Pages, octobre 2026 |
 | WAVE | [À MESURER] | | |
 | axe DevTools | [À MESURER] | | |
 
 Un score mesuré en local n'est qu'indicatif : refaire les mesures sur le site en ligne avant la soutenance.
 
 ## Configuration du formulaire
+
+Le formulaire n'est pas relié à Formspree pour la soutenance : il vérifie les champs, puis indique
+qu'il n'est pas encore configuré au lieu de simuler un envoi. Pour l'activer :
 
 1. Créer un compte gratuit sur [formspree.io](https://formspree.io) avec l'adresse kennylucaspro@gmail.com.
 2. Créer un formulaire : Formspree donne une adresse du type `https://formspree.io/f/abcdwxyz`.

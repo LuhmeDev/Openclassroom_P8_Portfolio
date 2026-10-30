@@ -12,7 +12,6 @@
 // - fiche : le contenu de la fenêtre détaillée
 //
 // Chaque affirmation des fiches vient du code des dépôts.
-// Les mentions [À COMPLÉTER] ou [À CONFIRMER] attendent la validation de Kenny.
 
 const listeDesProjets = [
   {
@@ -29,9 +28,9 @@ const listeDesProjets = [
     lienGithubComplementaire: '',
     lienDemo: '',
     video: 'videos/demo-planning.mp4',
-    mentionSansLien: 'Code privé : projet réalisé en entreprise',
+    mentionSansLien: 'Code privé : projet réalisé chez AQMO',
     fiche: {
-      contexte: "Projet réalisé en entreprise pour un service qui assure la maintenance d'équipements de laboratoire chez des clients industriels. L'application tourne dans le bureau applicatif d'une plateforme low-code, qui fournit les données par des points d'accès HTTP.",
+      contexte: "Projet réalisé en alternance chez AQMO, pour un service qui assure la maintenance d'équipements de laboratoire chez des clients industriels. L'application tourne dans le bureau applicatif d'une plateforme low-code, qui fournit les données par des points d'accès HTTP.",
       objectifs: [
         "Calculer automatiquement les prochaines échéances de chaque équipement selon sa récurrence.",
         "Regrouper les échéances d'un même pilote en campagnes d'intervention.",
@@ -45,7 +44,7 @@ const listeDesProjets = [
         'Requêtes SQL pour les points d\'accès de la plateforme',
         'Automatisation des notifications avec n8n',
         'Tests automatisés écrits sans dépendance',
-        'Développement assisté par IA (Claude Code), avec relecture et tests',
+        'Développement assisté par IA (Claude Code) : pilotage et recette des implémentations',
       ],
       defis: [
         {
@@ -64,13 +63,13 @@ const listeDesProjets = [
       resultats: [
         '37 modules JavaScript, 137 commits entre août et octobre 2026.',
         '2 747 contrôles automatisés, tous au vert (mesuré le 26 octobre 2026).',
-        "[À COMPLÉTER : état actuel de l'application (bêta, en service ?)]",
+        'Application en bêta.',
       ],
       ameliorations: [
         'Ajouter un cache local pour accélérer l\'affichage (prévu après la bêta).',
         'Tester aussi le SQL exécuté côté plateforme : les tests actuels vérifient le front à partir de réponses enregistrées.',
       ],
-      noteIA: "Développé avec l'assistance de Claude Code : j'ai mené le cadrage et la conception, et je relis et teste le code produit. [À CONFIRMER : formulation]",
+      noteIA: "Développé avec l'assistance de Claude Code : j'ai mené la conception, piloté le développement et assuré la recette de chaque implémentation.",
     },
   },
   {
@@ -80,13 +79,13 @@ const listeDesProjets = [
     miseEnAvant: true,
     resume: 'Application React de location de logements entre particuliers : routage, carrousel de photos, menus déroulants réutilisables.',
     image: 'images/projets/projet-kasa.webp',
-    texteAlternatif: "Page À propos de l'application Kasa avec ses menus déroulants.",
+    texteAlternatif: "Page d'accueil de l'application Kasa : bannière « Chez vous, partout et ailleurs » et cartes de logements.",
     technologies: ['React', 'React Router', 'Sass', 'Vite'],
     donneesFictives: false,
     lienGithub: 'https://github.com/LuhmeDev/Openclassroom_P5_Kasa',
     lienGithubComplementaire: '',
     lienDemo: '',
-    video: '',
+    video: 'videos/demo-kasa.mp4',
     mentionSansLien: '',
     fiche: {
       contexte: "Projet de formation : développer en React l'interface d'une plateforme de location de logements entre particuliers, à partir d'une maquette et d'un fichier de données JSON.",
@@ -169,13 +168,12 @@ const listeDesProjets = [
           solution: 'Textes alternatifs descriptifs, lang="fr", labels reliés aux champs avec l\'attribut for.',
         },
         {
-          probleme: "Galerie : les flèches précédent et suivant et le filtre actif ne fonctionnaient pas correctement. [À CONFIRMER]",
-          solution: "Correction du calcul de l'image précédente et suivante, et style du filtre actif. [À CONFIRMER]",
+          probleme: "Deux bugs signalés par la cliente : dans la fenêtre de la galerie, les flèches précédent et suivant ne fonctionnaient pas, et le filtre sélectionné n'était pas mis en évidence.",
+          solution: "Correction du calcul de la position de l'image précédente et suivante (avec retour au début en fin de liste), et classe active ajoutée au filtre cliqué pour lui donner le fond doré.",
         },
       ],
       resultats: [
         'Poids des images divisé par près de trois.',
-        '[À COMPLÉTER : scores Lighthouse avant et après, si tu les as]',
       ],
       ameliorations: [
         'Remplacer jQuery et Bootstrap par du JavaScript et du CSS natifs pour alléger encore la page.',
@@ -268,8 +266,8 @@ const listeDesProjets = [
       ],
       defis: [
         {
-          probleme: '[À COMPLÉTER : une difficulté rencontrée sur ce projet]',
-          solution: '[À COMPLÉTER : comment tu l\'as résolue]',
+          probleme: "Les photos des cartes d'hébergement n'ont pas toutes les mêmes proportions : sans traitement, elles se déformaient ou débordaient des coins arrondis.",
+          solution: "Après des recherches et des essais : hauteur fixe pour chaque taille d'écran, object-fit: cover pour recadrer sans déformer, et overflow: hidden pour garder les coins arrondis.",
         },
       ],
       resultats: ['Page conforme à la maquette sur les trois tailles d\'écran.'],
@@ -293,9 +291,7 @@ const listeDesProjets = [
     lienGithub: 'https://github.com/LuhmeDev/Openclassroom_P6_MonVieuxGrimoire_Soutenance',
     lienGithubComplementaire: 'https://github.com/LuhmeDev/Openclassroom_P6_MonVieuxGrimoire_Front_Soutenance',
     lienDemo: '',
-    // Vidéo à enregistrer par Kenny : l'API a besoin d'une base MongoDB (Atlas) pour tourner.
-    // Une fois le fichier placé dans public/videos, écrire ici 'videos/demo-mon-vieux-grimoire.mp4'
-    video: '',
+    video: 'videos/demo-mon-vieux-grimoire.mp4',
     mentionSansLien: '',
     fiche: {
       contexte: "Projet de formation : développer l'API d'un site de notation de livres dont l'interface React était fournie.",

@@ -11,15 +11,21 @@ const listeDesEtapesDuParcours = [
     estEnCours: true,
   },
   {
-    periode: '[À COMPLÉTER : dates] · [À COMPLÉTER : entreprise]',
+    periode: '2021 – 2023 · SCEA de Pinchagut (Bourideys), puis Favuzzi (Montréal, Canada)',
     titre: 'Responsable et assistant responsable logistique',
     description: 'Préparation des tournées de livraison, suivi des commandes et des stocks, préparation des bons de livraison pour les transporteurs sous-traitants, contrôle qualité.',
     estEnCours: false,
   },
   {
-    periode: '[À COMPLÉTER : années]',
+    periode: '2016 – 2018',
     titre: 'BTS Audiovisuel — Montage et post-production',
-    description: '[À COMPLÉTER : établissement]',
+    description: 'Lycée René Cassin, Biarritz. Stages en montage chez I.Mage Production (Bordeaux) et France 3 Bayonne.',
+    estEnCours: false,
+  },
+  {
+    periode: '2011 – 2014',
+    titre: 'Bac STI2D option SIN, puis BTS Informatique et réseaux',
+    description: 'Lycée Alfred Kastler, Talence. Premières bases en systèmes d\'information et en réseaux.',
     estEnCours: false,
   },
 ]

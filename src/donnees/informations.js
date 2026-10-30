@@ -15,12 +15,12 @@ const informations = {
   identifiantFormspree: '',
 
   // Hébergeur, obligatoire dans les mentions légales.
-  // À VÉRIFIER avant la mise en ligne : l'adresse officielle figure dans les conditions de GitHub
-  // (les sites qui la citent ne donnent pas tous la même).
+  // Adresse vérifiée le 30/10/2026 dans la déclaration de confidentialité de GitHub :
+  // https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
   hebergeur: {
     nom: 'GitHub, Inc.',
-    adresse: '88 Colin P Kelly Jr Street, San Francisco, CA 94107, États-Unis',
-    site: 'https://pages.github.com',
+    adresse: '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis',
+    site: 'https://github.com',
   },
 }
 

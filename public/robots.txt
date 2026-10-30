@@ -1,5 +1,7 @@
 # Autorise tous les moteurs de recherche à parcourir le site.
-# Une fois le site en ligne (tâche T30), ajouter la ligne :
-# Sitemap: https://ADRESSE-DU-SITE/sitemap.xml
+# Attention : les moteurs ne lisent robots.txt qu'à la racine du domaine (luhmedev.github.io/robots.txt).
+# Ici, le site est dans un sous-dossier : le plan du site est donc à déclarer aussi dans Google Search Console.
 User-agent: *
 Allow: /
+
+Sitemap: https://luhmedev.github.io/Openclassroom_P8_Portfolio/sitemap.xml

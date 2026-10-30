@@ -1,5 +1,4 @@
 // Section « À propos » : le parcours, la méthode de travail et l'objectif.
-// Les passages [À COMPLÉTER] attendent les mots de Kenny.
 import './APropos.css'
 
 function APropos() {
@@ -13,14 +12,19 @@ function APropos() {
 
         <div className="a-propos-texte">
           <p>
-            Titulaire d'un BTS Audiovisuel option montage et post-production, j'ai appris à découper,
-            rythmer et soigner chaque détail d'une image. J'ai ensuite été responsable et assistant
+            L'informatique m'attire depuis le lycée : Bac STI2D option Systèmes d'information et
+            numérique, puis une année de BTS Informatique et réseaux. J'ai ensuite choisi l'image et
+            obtenu un BTS Audiovisuel option montage et post-production, où j'ai appris à découper, rythmer
+            et soigner chaque détail. J'ai ensuite été responsable et assistant
             responsable en logistique : préparation des tournées de livraison, suivi des commandes et
             des stocks, bons de livraison pour les transporteurs sous-traitants, contrôle qualité.
           </p>
           <p>
-            Je me suis ensuite formé au développement web avec OpenClassrooms.
-            [À COMPLÉTER : ce qui t'a donné envie de passer au développement.]
+            Après cinq ans à l'étranger, au Canada puis en Nouvelle-Zélande, j'ai choisi de me former
+            au développement web avec OpenClassrooms, en alternance. J'y retrouve ce qui me plaisait
+            dans le montage : construire quelque chose de visuel pièce par pièce, et le reprendre
+            jusqu'à ce que le rendu soit juste. Une interface se découpe en composants comme un film
+            en séquences, et chaque détail compte pour la personne qui la regarde.
           </p>
           <p>
             Sur chaque projet, je pars d'une maquette quand elle existe, je découpe le travail en
@@ -28,8 +32,8 @@ function APropos() {
             réguliers et nommés.
           </p>
           <p>
-            Après la validation de ma formation, je rejoins [À COMPLÉTER : entreprise ou « une entreprise »]
-            en CDI comme développeur Front-End.
+            Après la validation de ma formation, je rejoins en CDI le service TechView d'AQMO,
+            consacré au développement de solutions, comme développeur Front-End.
           </p>
         </div>
       </div>
