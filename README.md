@@ -39,21 +39,24 @@ portfolio-kenny-lucas/
 ├── index.html                 Page du portfolio (balises SEO, Open Graph, données structurées)
 ├── mentions-legales/
 │   └── index.html             Page des mentions légales
+├── 404.html                   Page d'erreur « Média hors ligne », affichée par GitHub Pages
 ├── public/                    Fichiers copiés tels quels dans le site
 │   ├── images/projets/        Captures des projets (WebP, 960 × 540)
 │   ├── images/apercu-partage.jpg   Image affichée quand on partage le lien
 │   ├── videos/                Vidéos de démonstration (MP4, sans son)
 │   ├── favicon.svg
-│   └── robots.txt
+│   ├── robots.txt
+│   └── sitemap.xml            Plan du site pour les moteurs de recherche
 ├── src/
 │   ├── main.jsx               Point d'entrée du portfolio
 │   ├── mentions-legales.jsx   Point d'entrée des mentions légales
+│   ├── page-404.jsx           Point d'entrée de la page d'erreur
 │   ├── App.jsx                Assemble les sections dans l'ordre
 │   ├── composants/            Un fichier .jsx et un fichier .css par section
 │   ├── donnees/               Contenus : projets, compétences, parcours, informations
 │   ├── styles/                Design system (variables), polices, règles de base
 │   └── assets/polices/        Polices hébergées dans le projet (woff2)
-└── vite.config.js             Déclare les deux pages HTML
+└── vite.config.js             Déclare les trois pages HTML
 ```
 
 ## Choix techniques à retenir
@@ -64,8 +67,11 @@ portfolio-kenny-lucas/
   en dur dans les composants.
 - **La fiche projet utilise l'élément `<dialog>` natif.** Le navigateur gère le focus, la touche Échap et
   le retour du focus sur le bouton d'ouverture.
-- **Deux pages HTML plutôt qu'un routeur.** Les mentions légales sont la seule page secondaire :
+- **Des pages HTML plutôt qu'un routeur.** Les mentions légales et la page 404 sont les seules pages secondaires :
   Vite sait construire plusieurs pages, ce qui évite d'installer React Router.
+- **Une page 404 dans la direction artistique.** GitHub Pages affiche `404.html` pour toute adresse inexistante.
+  Elle reprend l'écran « Média hors ligne » des logiciels de montage, et ses liens partent de `BASE_URL`
+  car elle peut s'afficher à n'importe quelle adresse du site.
 - **Polices hébergées dans le projet** : aucun appel à Google Fonts, donc plus rapide et aucune donnée envoyée.
 - **Formulaire honnête** : tant que l'identifiant Formspree est vide, le formulaire l'indique au lieu de simuler
   un envoi.
@@ -92,8 +98,7 @@ Visé : WCAG 2.2 niveau AA.
 | Lighthouse : bonnes pratiques | 100 | 100 | idem |
 | Lighthouse : SEO | 100 | 100 | idem |
 | Lighthouse en ligne (4 catégories) | 100 | 100 | Navigation privée, sur GitHub Pages, octobre 2026 |
-| WAVE | [À MESURER] | | |
-| axe DevTools | [À MESURER] | | |
+| Console Chrome | 0 erreur | 0 erreur | Aucun message, aucun problème signalé (« No issues ») |
 
 Un score mesuré en local n'est qu'indicatif : refaire les mesures sur le site en ligne avant la soutenance.
 

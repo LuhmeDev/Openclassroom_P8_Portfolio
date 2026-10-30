@@ -1,0 +1,158 @@
+/* ==========================================================================
+   PAGE 404 — « Média hors ligne »
+   ========================================================================== */
+
+.introuvable-en-tete {
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.introuvable-en-tete-barre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: var(--hauteur-navigation);
+}
+
+.introuvable-retour {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+/* Mobile : le texte puis le moniteur, l'un sous l'autre */
+.introuvable {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-5);
+  padding-top: var(--espace-6);
+  padding-bottom: var(--espace-6);
+}
+
+.introuvable-texte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-3);
+}
+
+.introuvable-titre {
+  font-family: var(--police-titre);
+  font-size: var(--taille-titre-principal);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.introuvable-description {
+  max-width: 32rem;
+  color: var(--couleur-texte-secondaire);
+  font-size: var(--taille-texte-grand);
+}
+
+.introuvable-boutons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--espace-3);
+  margin-top: var(--espace-2);
+}
+
+/* ---------- Moniteur ----------
+   Les mires de couleur rappellent l'écran de test d'un moniteur vidéo.
+   Elles sont assombries pour laisser le message lisible par-dessus. */
+.moniteur {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-grand);
+}
+
+.moniteur-mires {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.18;
+}
+
+.moniteur-mires span {
+  flex: 1;
+}
+
+.moniteur-mires span:nth-child(1) {
+  background-color: var(--couleur-texte);
+}
+
+.moniteur-mires span:nth-child(2) {
+  background-color: var(--couleur-accent);
+}
+
+.moniteur-mires span:nth-child(3) {
+  background-color: var(--couleur-succes);
+}
+
+.moniteur-mires span:nth-child(4) {
+  background-color: var(--couleur-texte-secondaire);
+}
+
+.moniteur-mires span:nth-child(5) {
+  background-color: var(--couleur-erreur);
+}
+
+.moniteur-mires span:nth-child(6) {
+  background-color: var(--couleur-bordure-champ);
+}
+
+.moniteur-mires span:nth-child(7) {
+  background-color: var(--couleur-surface-claire);
+}
+
+.moniteur-message {
+  position: relative;
+  padding: var(--espace-2) var(--espace-4);
+  background-color: var(--couleur-fond);
+  color: var(--couleur-erreur);
+  font-family: var(--police-code);
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--couleur-erreur);
+  border-radius: var(--rayon-petit);
+  /* Clignote trois fois au chargement, comme un signal perdu, puis reste affiché */
+  animation: moniteur-clignotement 1s steps(2, jump-none) 3;
+}
+
+.moniteur-timecode {
+  position: absolute;
+  right: var(--espace-3);
+  bottom: var(--espace-2);
+  color: var(--couleur-texte-discret);
+  font-family: var(--police-code);
+  font-size: var(--taille-texte-petit);
+}
+
+@keyframes moniteur-clignotement {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Ordinateur : le texte à gauche, le moniteur à droite */
+@media (min-width: 1024px) {
+  .introuvable {
+    flex-direction: row;
+    align-items: center;
+    padding-top: var(--espace-7);
+    padding-bottom: var(--espace-7);
+  }
+
+  .introuvable-texte,
+  .moniteur {
+    flex: 1;
+  }
+}

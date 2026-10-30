@@ -15,13 +15,15 @@ export default defineConfig({
 
   build: {
     rollupOptions: {
-      // Le site a deux pages HTML :
+      // Le site a trois pages HTML :
       // - index.html : le portfolio
       // - mentions-legales/index.html : les mentions légales, à l'adresse /mentions-legales/
-      // Deux pages HTML simples évitent d'installer un routeur pour une seule page secondaire.
+      // - 404.html : la page d'erreur, que GitHub Pages affiche pour toute adresse inexistante
+      // Des pages HTML simples évitent d'installer un routeur pour deux pages secondaires.
       input: {
         portfolio: resolve(import.meta.dirname, 'index.html'),
         mentionsLegales: resolve(import.meta.dirname, 'mentions-legales/index.html'),
+        pageIntrouvable: resolve(import.meta.dirname, '404.html'),
       },
     },
   },
