@@ -1,0 +1,12 @@
+# Dépendances installées par npm : elles se réinstallent avec « npm install »
+node_modules
+
+# Version construite par « npm run build » 
+dist
+
+# Fichiers de configuration locaux
+.env
+.DS_Store
+
+# Documentation personnelle : reste en local, non versionnée
+docs

@@ -1,0 +1,137 @@
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+
+/* Mobile : texte puis formulaire. Ordinateur : côte à côte. */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-5);
+}
+
+@media (min-width: 1024px) {
+  .contact {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--espace-6);
+  }
+
+  .contact-texte {
+    flex: 1;
+  }
+
+  .contact-formulaire {
+    flex: 1.2;
+  }
+}
+
+/* ---------- Texte et coordonnées ---------- */
+.contact-invitation {
+  margin-top: var(--espace-3);
+  color: var(--couleur-texte-secondaire);
+  font-size: var(--taille-texte-grand);
+}
+
+.contact-coordonnees {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  margin-top: var(--espace-4);
+  list-style: none;
+}
+
+.contact-coordonnees a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  /* Une adresse e-mail longue peut se couper sur un petit écran plutôt que déborder */
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Formulaire ---------- */
+.contact-formulaire {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-3);
+  padding: var(--espace-4);
+  background-color: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-grand);
+}
+
+@media (min-width: 768px) {
+  .contact-formulaire {
+    padding: var(--espace-5);
+  }
+}
+
+.contact-champ {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+}
+
+.contact-champ label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.contact-champ input,
+.contact-champ textarea {
+  min-height: 44px;
+  padding: var(--espace-2) var(--espace-3);
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  border: 1px solid var(--couleur-bordure-champ);
+  border-radius: var(--rayon-moyen);
+}
+
+.contact-champ textarea {
+  resize: vertical;
+}
+
+/* Champ en erreur : bordure rouge, en plus du texte d'erreur
+   (la couleur seule ne suffit pas, le texte explique le problème) */
+.contact-champ input[aria-invalid='true'],
+.contact-champ textarea[aria-invalid='true'] {
+  border-color: var(--couleur-erreur);
+}
+
+.contact-erreur {
+  min-height: 1.25rem;
+  color: var(--couleur-erreur);
+  font-size: var(--taille-texte-petit);
+}
+
+/* Le piège à robots est sorti de l'écran */
+.contact-piege {
+  position: absolute;
+  left: -9999px;
+}
+
+.contact-formulaire .bouton-principal {
+  align-self: flex-start;
+}
+
+.contact-formulaire .bouton-principal:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.contact-etat {
+  min-height: 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.contact-etat-succes {
+  color: var(--couleur-succes);
+}
+
+.contact-etat-erreur {
+  color: var(--couleur-erreur);
+}
+
+.contact-mention {
+  color: var(--couleur-texte-discret);
+  font-size: var(--taille-texte-petit);
+}

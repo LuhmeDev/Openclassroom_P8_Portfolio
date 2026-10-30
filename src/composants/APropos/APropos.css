@@ -1,0 +1,35 @@
+/* ==========================================================================
+   À PROPOS
+   ========================================================================== */
+
+/* Mobile : titre au-dessus du texte. Ordinateur : titre à gauche, texte à droite. */
+.a-propos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-4);
+}
+
+.a-propos-texte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-4);
+  max-width: 44rem;
+  color: var(--couleur-texte-secondaire);
+  font-size: var(--taille-texte-grand);
+  line-height: 1.7;
+}
+
+@media (min-width: 1024px) {
+  .a-propos {
+    flex-direction: row;
+    gap: var(--espace-6);
+  }
+
+  .a-propos-en-tete {
+    flex: 1;
+  }
+
+  .a-propos-texte {
+    flex: 2;
+  }
+}

@@ -1,0 +1,136 @@
+/* ==========================================================================
+   NAVIGATION
+   ========================================================================== */
+
+/* Barre collée en haut de l'écran pendant le défilement */
+.navigation {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--couleur-fond-transparent);
+  border-bottom: 1px solid var(--couleur-bordure);
+  /* Floute légèrement le contenu qui passe dessous */
+  backdrop-filter: blur(8px);
+}
+
+.navigation-barre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--hauteur-navigation);
+}
+
+/* ---------- Logo : point ambre + nom ---------- */
+.navigation-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--espace-3);
+  min-height: 44px;
+  color: var(--couleur-texte);
+  font-family: var(--police-titre);
+  font-size: var(--taille-texte-grand);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.navigation-logo:hover {
+  color: var(--couleur-texte);
+}
+
+.navigation-logo-point {
+  width: 12px;
+  height: 12px;
+  background-color: var(--couleur-accent);
+  border-radius: 50%;
+}
+
+/* ---------- Bouton Menu (mobile uniquement) ---------- */
+.navigation-bouton-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid var(--couleur-bordure-champ);
+  border-radius: var(--rayon-moyen);
+  cursor: pointer;
+}
+
+.navigation-icone-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navigation-icone-menu span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--couleur-texte);
+  border-radius: 2px;
+}
+
+/* ---------- Liste des liens (mobile : cachée par défaut) ---------- */
+.navigation-menu {
+  display: none;
+  list-style: none;
+}
+
+/* Menu mobile ouvert : la liste s'affiche sous la barre, sur toute la largeur */
+.navigation-menu-ouvert {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  padding: var(--espace-3);
+  background-color: var(--couleur-surface);
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.navigation-lien {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--couleur-texte-secondaire);
+  text-decoration: none;
+  transition: color var(--duree-rapide) ease;
+}
+
+.navigation-lien:hover {
+  color: var(--couleur-texte);
+}
+
+.navigation-contact {
+  margin-top: var(--espace-2);
+}
+
+/* ---------- Ordinateur : liens toujours visibles, bouton Menu caché ---------- */
+@media (min-width: 1024px) {
+  .navigation-bouton-menu {
+    display: none;
+  }
+
+  .navigation-menu,
+  .navigation-menu-ouvert {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--espace-4);
+    padding: 0;
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  .navigation-contact {
+    margin-top: 0;
+  }
+}

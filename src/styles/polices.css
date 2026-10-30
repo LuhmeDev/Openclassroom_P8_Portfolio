@@ -1,0 +1,59 @@
+/* ==========================================================================
+   POLICES — hébergées dans le projet (dossier src/assets/polices)
+   Pourquoi pas Google Fonts ? Aucun appel à un serveur externe :
+   le site est plus rapide, et aucune donnée du visiteur n'est envoyée à Google.
+   font-display: swap affiche le texte tout de suite avec une police de secours,
+   puis la remplace dès que la vraie police est chargée.
+   Licence des trois polices : SIL Open Font License (usage libre).
+   ========================================================================== */
+
+/* ---------- Archivo : les titres ---------- */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/polices/archivo-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/polices/archivo-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('../assets/polices/archivo-800.woff2') format('woff2');
+}
+
+/* ---------- Inter : le texte courant ---------- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/polices/inter-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/polices/inter-600.woff2') format('woff2');
+}
+
+/* ---------- JetBrains Mono : les timecodes et les étiquettes ---------- */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/polices/jetbrains-mono-400.woff2') format('woff2');
+}

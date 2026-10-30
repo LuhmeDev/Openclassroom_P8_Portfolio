@@ -1,0 +1,5 @@
+# Autorise tous les moteurs de recherche à parcourir le site.
+# Une fois le site en ligne (tâche T30), ajouter la ligne :
+# Sitemap: https://ADRESSE-DU-SITE/sitemap.xml
+User-agent: *
+Allow: /

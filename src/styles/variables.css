@@ -1,0 +1,83 @@
+/* ==========================================================================
+   DESIGN SYSTEM — toutes les valeurs du site sont rangées ici.
+   Règle : aucun composant n'écrit une couleur ou une taille en dur,
+   il utilise toujours une de ces variables. Pour changer l'accent du site,
+   on change une seule ligne.
+   ========================================================================== */
+
+:root {
+  /* ---------- Couleurs ----------
+     Contrastes mesurés (norme WCAG, minimum 4,5:1 pour du texte courant) :
+     - texte principal sur fond : 16,4:1
+     - texte secondaire sur fond : 7,8:1
+     - texte discret sur fond : 5,9:1
+     - accent ambre sur fond : 10,6:1
+     - texte sombre sur bouton ambre : 10,6:1 */
+  --couleur-fond: #0E0F12;
+  --couleur-surface: #17191E;
+  --couleur-surface-claire: #22252B;
+  --couleur-surface-sombre: #1C1F24;
+  --couleur-fond-transparent: rgba(14, 15, 18, 0.9);
+  --couleur-voile: rgba(0, 0, 0, 0.75);
+  --couleur-bordure: #2A2D34;
+  --couleur-bordure-champ: #6B7079;
+  --couleur-texte: #ECEDEE;
+  --couleur-texte-secondaire: #A1A6AE;
+  --couleur-texte-discret: #8A8F98;
+  --couleur-accent: #FFB224;
+  --couleur-accent-survol: #FFC75A;
+  --couleur-accent-transparent: rgba(255, 178, 36, 0.16);
+  --couleur-accent-bordure: rgba(255, 178, 36, 0.5);
+  --couleur-succes: #4ADE80;
+  --couleur-erreur: #F87171;
+
+  /* ---------- Polices ----------
+     Les fichiers sont dans src/assets/polices et déclarés dans polices.css */
+  --police-titre: 'Archivo', system-ui, sans-serif;
+  --police-texte: 'Inter', system-ui, sans-serif;
+  --police-code: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---------- Tailles de texte ----------
+     clamp(minimum, valeur idéale, maximum) : la taille suit la largeur de l'écran
+     sans jamais descendre sous le minimum ni dépasser le maximum. */
+  --taille-texte-petit: 0.8125rem;
+  --taille-texte: 1rem;
+  --taille-texte-grand: 1.125rem;
+  --taille-titre-carte: 1.25rem;
+  --taille-titre-section: clamp(1.75rem, 4vw, 2.5rem);
+  --taille-titre-principal: clamp(2.5rem, 8vw, 4.5rem);
+  --taille-sous-titre-principal: clamp(1.25rem, 3vw, 1.75rem);
+
+  /* ---------- Espacements (multiples de 4 px) ---------- */
+  --espace-1: 0.25rem;
+  --espace-2: 0.5rem;
+  --espace-3: 1rem;
+  --espace-4: 1.5rem;
+  --espace-5: 2.5rem;
+  --espace-6: 4rem;
+  --espace-7: 6rem;
+
+  /* ---------- Rayons des coins ---------- */
+  --rayon-petit: 4px;
+  --rayon-moyen: 8px;
+  --rayon-grand: 16px;
+  --rayon-pilule: 999px;
+
+  /* ---------- Ombre ----------
+     Sur fond sombre, la profondeur vient surtout des bordures :
+     l'ombre n'apparaît qu'au survol des cartes. */
+  --ombre-carte: 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* ---------- Durées d'animation ---------- */
+  --duree-rapide: 200ms;
+  --duree-normale: 300ms;
+
+  /* ---------- Mise en page ---------- */
+  --largeur-maximum: 75rem;
+  --hauteur-navigation: 4.5rem;
+}
+
+/* Rappel : les variables CSS ne fonctionnent pas dans les @media.
+   Les points de rupture sont donc écrits en clair dans chaque fichier :
+   - 768px : tablette
+   - 1024px : ordinateur */

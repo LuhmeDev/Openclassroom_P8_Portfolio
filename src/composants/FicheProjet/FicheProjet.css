@@ -1,0 +1,211 @@
+/* ==========================================================================
+   FICHE PROJET (fenêtre modale)
+   ========================================================================== */
+
+/* Pendant qu'une fiche est ouverte, la page derrière ne défile plus */
+body:has(.fiche[open]) {
+  overflow: hidden;
+}
+
+.fiche {
+  width: min(100% - 2rem, 52rem);
+  max-height: calc(100dvh - 2rem);
+  padding: 0;
+  background-color: var(--couleur-surface);
+  color: var(--couleur-texte);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-grand);
+}
+
+/* Le fond assombri derrière la fenêtre */
+.fiche::backdrop {
+  background-color: var(--couleur-voile);
+}
+
+/* Apparition douce de la fenêtre */
+.fiche[open] {
+  animation: fiche-apparition var(--duree-normale) ease-out;
+}
+
+@keyframes fiche-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fiche-contenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-5);
+  padding: var(--espace-4);
+}
+
+@media (min-width: 768px) {
+  .fiche-contenu {
+    padding: var(--espace-5);
+  }
+}
+
+/* ---------- En-tête : titre + bouton fermer ---------- */
+.fiche-en-tete {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--espace-3);
+}
+
+.fiche-categorie {
+  margin-bottom: var(--espace-1);
+  color: var(--couleur-accent);
+  font-family: var(--police-code);
+  font-size: var(--taille-texte-petit);
+}
+
+.fiche-titre {
+  font-family: var(--police-titre);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.fiche-bouton-fermer {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  color: var(--couleur-texte);
+  font-size: 1.125rem;
+  border: 1px solid var(--couleur-bordure-champ);
+  border-radius: var(--rayon-moyen);
+  cursor: pointer;
+}
+
+.fiche-bouton-fermer:hover {
+  color: var(--couleur-accent);
+  border-color: var(--couleur-accent);
+}
+
+/* ---------- Vidéo ou image ---------- */
+.fiche-media img,
+.fiche-media video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top;
+  background-color: var(--couleur-surface-sombre);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-moyen);
+}
+
+.fiche-legende {
+  margin-top: var(--espace-2);
+  color: var(--couleur-texte-discret);
+  font-size: var(--taille-texte-petit);
+}
+
+/* ---------- Liens ---------- */
+.fiche-liens {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espace-3);
+}
+
+.fiche-mention {
+  color: var(--couleur-texte-secondaire);
+  font-family: var(--police-code);
+  font-size: var(--taille-texte-petit);
+}
+
+/* ---------- Blocs de contenu ---------- */
+.fiche-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-3);
+  color: var(--couleur-texte-secondaire);
+}
+
+.fiche-sous-titre {
+  color: var(--couleur-texte);
+  font-family: var(--police-titre);
+  font-size: var(--taille-texte-grand);
+  font-weight: 600;
+}
+
+.fiche-liste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  padding-left: var(--espace-4);
+}
+
+.fiche-liste li::marker {
+  color: var(--couleur-accent);
+}
+
+.fiche-technologies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--espace-2);
+  list-style: none;
+}
+
+.fiche-technologies li {
+  padding: var(--espace-1) var(--espace-2);
+  background-color: var(--couleur-surface-claire);
+  color: var(--couleur-texte);
+  font-family: var(--police-code);
+  font-size: var(--taille-texte-petit);
+  border-radius: var(--rayon-petit);
+}
+
+/* ---------- Défis et solutions ---------- */
+.fiche-defis {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-3);
+  list-style: none;
+}
+
+.fiche-defi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  padding: var(--espace-3);
+  background-color: var(--couleur-fond);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-moyen);
+}
+
+.fiche-defi-etiquette {
+  display: inline-block;
+  margin-right: var(--espace-2);
+  padding: 0 var(--espace-2);
+  color: var(--couleur-erreur);
+  font-family: var(--police-code);
+  font-size: 0.75rem;
+  border: 1px solid currentColor;
+  border-radius: var(--rayon-petit);
+}
+
+.fiche-defi-etiquette-solution {
+  color: var(--couleur-succes);
+}
+
+.fiche-note {
+  padding: var(--espace-3);
+  color: var(--couleur-texte-secondaire);
+  font-size: 0.9375rem;
+  background-color: var(--couleur-fond);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-moyen);
+}

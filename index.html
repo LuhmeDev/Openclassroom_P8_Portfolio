@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Référencement : le titre et la description qui s'affichent dans Google -->
+    <title>Kenny Lucas — Développeur Web Front-End à Bordeaux</title>
+    <meta
+      name="description"
+      content="Portfolio de Kenny Lucas, développeur web Front-End à Bordeaux. Projets React et JavaScript, du montage vidéo au développement web."
+    />
+
+    <!-- Couleur de la barre du navigateur sur mobile -->
+    <meta name="theme-color" content="#0E0F12" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph : l'aperçu affiché quand on partage le lien (LinkedIn, WhatsApp, Slack...).
+         À FAIRE une fois le site en ligne (tâche T30) : remplacer les deux adresses
+         ci-dessous par l'adresse complète, par exemple https://mon-site.vercel.app/ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Kenny Lucas — Développeur Web Front-End à Bordeaux" />
+    <meta
+      property="og:description"
+      content="Du montage vidéo au développement web : projets React et JavaScript."
+    />
+    <meta property="og:image" content="/images/apercu-partage.jpg" />
+    <meta property="og:url" content="/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Données structurées : aident Google à comprendre qui est la personne présentée -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kenny Lucas",
+        "jobTitle": "Développeur Web Front-End",
+        "email": "mailto:kennylucaspro@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux",
+          "addressCountry": "FR"
+        },
+        "sameAs": ["https://github.com/LuhmeDev"]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- React affiche tout le portfolio dans cette balise -->
+    <div id="racine"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

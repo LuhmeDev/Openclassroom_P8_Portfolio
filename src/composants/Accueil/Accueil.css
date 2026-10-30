@@ -1,0 +1,195 @@
+/* ==========================================================================
+   ACCUEIL
+   ========================================================================== */
+
+.accueil {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-5);
+  padding-top: var(--espace-6);
+  padding-bottom: var(--espace-6);
+}
+
+@media (min-width: 1024px) {
+  .accueil {
+    padding-top: var(--espace-7);
+  }
+}
+
+/* ---------- Texte ---------- */
+.accueil-texte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-4);
+  max-width: 48rem;
+  /* Apparition douce au chargement (coupée si l'utilisateur réduit les animations) */
+  animation: accueil-apparition var(--duree-normale) ease-out both;
+}
+
+.accueil-titre {
+  font-family: var(--police-titre);
+  font-size: var(--taille-titre-principal);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.accueil-sous-titre {
+  font-family: var(--police-titre);
+  font-size: var(--taille-sous-titre-principal);
+  font-weight: 600;
+}
+
+.accueil-ville {
+  color: var(--couleur-texte-secondaire);
+}
+
+.accueil-accroche {
+  max-width: 40rem;
+  color: var(--couleur-texte-secondaire);
+  font-size: var(--taille-texte-grand);
+}
+
+.accueil-boutons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--espace-3);
+  padding-top: var(--espace-2);
+}
+
+@keyframes accueil-apparition {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Piste de montage ---------- */
+.piste {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  padding: var(--espace-3);
+  overflow: hidden;
+  background-color: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-grand);
+}
+
+@media (min-width: 768px) {
+  .piste {
+    padding: var(--espace-4);
+  }
+}
+
+.piste-graduations {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2.5rem;
+  color: var(--couleur-texte-discret);
+  font-family: var(--police-code);
+  font-size: 0.6875rem;
+}
+
+.piste-ligne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--espace-2);
+}
+
+.piste-nom {
+  flex-shrink: 0;
+  width: 2rem;
+  color: var(--couleur-texte-discret);
+  font-family: var(--police-code);
+  font-size: 0.6875rem;
+}
+
+.piste-clips {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: var(--espace-1);
+  /* min-width: 0 autorise les clips à rétrécir sur petit écran */
+  min-width: 0;
+}
+
+/* Un clip : un rectangle avec un texte coupé par « … » s'il manque de place */
+.piste-clip {
+  min-width: 0;
+  padding: var(--espace-2) var(--espace-2);
+  overflow: hidden;
+  background-color: var(--couleur-bordure);
+  color: var(--couleur-texte);
+  font-family: var(--police-code);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-radius: var(--rayon-petit);
+}
+
+.piste-clip-secondaire {
+  background-color: var(--couleur-surface-claire);
+  color: var(--couleur-texte-secondaire);
+}
+
+.piste-clip-audio {
+  background-color: var(--couleur-surface-sombre);
+  color: var(--couleur-texte-discret);
+}
+
+.piste-clip-accent {
+  background-color: var(--couleur-accent-transparent);
+  color: var(--couleur-accent);
+  outline: 1px solid var(--couleur-accent-bordure);
+  outline-offset: -1px;
+}
+
+/* Largeur relative des clips : flex-grow 2, 3 ou 4 */
+.piste-clip-taille-2 {
+  flex: 2;
+}
+
+.piste-clip-taille-3 {
+  flex: 3;
+}
+
+.piste-clip-taille-4 {
+  flex: 4;
+}
+
+.piste-vide {
+  min-width: 0;
+}
+
+/* Tête de lecture : avance de 0 à 72 % en 2,5 secondes, puis s'arrête.
+   Elle ne bouge qu'une fois : une animation qui dure plus de 5 secondes
+   devrait pouvoir être mise en pause (critère d'accessibilité WCAG 2.2.2). */
+.piste-tete-de-lecture {
+  position: absolute;
+  top: var(--espace-3);
+  bottom: var(--espace-3);
+  left: 72%;
+  width: 2px;
+  background-color: var(--couleur-accent);
+  animation: piste-lecture 2.5s ease-out both;
+}
+
+@keyframes piste-lecture {
+  from {
+    left: 3rem;
+  }
+
+  to {
+    left: 72%;
+  }
+}

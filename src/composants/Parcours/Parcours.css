@@ -1,0 +1,61 @@
+/* ==========================================================================
+   PARCOURS : timeline verticale
+   ========================================================================== */
+
+/* La ligne verticale de la timeline est la bordure gauche de la liste */
+.parcours-liste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-5);
+  margin-top: var(--espace-5);
+  margin-left: 6px;
+  list-style: none;
+  border-left: 2px solid var(--couleur-bordure);
+}
+
+.parcours-etape {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-1);
+  padding-left: var(--espace-5);
+}
+
+/* Le point posé sur la ligne, dessiné avec ::before */
+.parcours-etape::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -8px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--couleur-fond);
+  border: 2px solid var(--couleur-texte-discret);
+  border-radius: 50%;
+}
+
+.parcours-etape-en-cours::before {
+  background-color: var(--couleur-accent);
+  border-color: var(--couleur-accent);
+}
+
+.parcours-periode {
+  color: var(--couleur-texte-discret);
+  font-family: var(--police-code);
+  font-size: var(--taille-texte-petit);
+}
+
+.parcours-etape-en-cours .parcours-periode {
+  color: var(--couleur-accent);
+}
+
+.parcours-titre {
+  font-family: var(--police-titre);
+  font-size: var(--taille-titre-carte);
+  font-weight: 600;
+}
+
+.parcours-description {
+  max-width: 44rem;
+  color: var(--couleur-texte-secondaire);
+}

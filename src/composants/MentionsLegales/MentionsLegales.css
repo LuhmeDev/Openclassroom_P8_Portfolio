@@ -1,0 +1,52 @@
+/* ==========================================================================
+   MENTIONS LÉGALES
+   ========================================================================== */
+
+.mentions-en-tete {
+  border-bottom: 1px solid var(--couleur-bordure);
+}
+
+.mentions-en-tete-barre {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: var(--hauteur-navigation);
+}
+
+.mentions-retour {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.mentions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-5);
+  max-width: 48rem;
+  padding-top: var(--espace-6);
+  padding-bottom: var(--espace-6);
+}
+
+.mentions-titre {
+  font-family: var(--police-titre);
+  font-size: var(--taille-titre-section);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.mentions-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-2);
+  color: var(--couleur-texte-secondaire);
+}
+
+.mentions-bloc h2 {
+  margin-bottom: var(--espace-1);
+  color: var(--couleur-texte);
+  font-family: var(--police-titre);
+  font-size: var(--taille-titre-carte);
+  font-weight: 600;
+}

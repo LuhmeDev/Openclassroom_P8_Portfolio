@@ -1,0 +1,46 @@
+/* ==========================================================================
+   COMPÉTENCES
+   ========================================================================== */
+
+/* Grille : autant de colonnes de 260 px minimum que la largeur le permet.
+   Une colonne sur mobile, deux sur tablette, trois ou quatre sur ordinateur. */
+.competences-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--espace-3);
+  margin-top: var(--espace-5);
+  list-style: none;
+}
+
+.competences-carte {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espace-3);
+  padding: var(--espace-4);
+  background-color: var(--couleur-surface);
+  border: 1px solid var(--couleur-bordure);
+  border-radius: var(--rayon-grand);
+}
+
+.competences-carte-titre {
+  font-family: var(--police-titre);
+  font-size: var(--taille-texte-grand);
+  font-weight: 600;
+}
+
+.competences-liste {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--espace-2);
+  list-style: none;
+}
+
+.competences-etiquette {
+  padding: var(--espace-1) var(--espace-2);
+  background-color: var(--couleur-surface-claire);
+  color: var(--couleur-texte);
+  font-family: var(--police-code);
+  font-size: var(--taille-texte-petit);
+  border-radius: var(--rayon-petit);
+}
