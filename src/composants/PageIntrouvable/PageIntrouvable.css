@@ -72,43 +72,48 @@
   border-radius: var(--rayon-grand);
 }
 
+/* Les mires couvrent tout le moniteur, derrière le message */
 .moniteur-mires {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: row;
   opacity: 0.18;
 }
 
-.moniteur-mires span {
+/* Chaque mire prend la même largeur */
+.moniteur-mire {
   flex: 1;
 }
 
-.moniteur-mires span:nth-child(1) {
+.moniteur-mire-blanche {
   background-color: var(--couleur-texte);
 }
 
-.moniteur-mires span:nth-child(2) {
+.moniteur-mire-ambre {
   background-color: var(--couleur-accent);
 }
 
-.moniteur-mires span:nth-child(3) {
+.moniteur-mire-verte {
   background-color: var(--couleur-succes);
 }
 
-.moniteur-mires span:nth-child(4) {
+.moniteur-mire-grise {
   background-color: var(--couleur-texte-secondaire);
 }
 
-.moniteur-mires span:nth-child(5) {
+.moniteur-mire-rouge {
   background-color: var(--couleur-erreur);
 }
 
-.moniteur-mires span:nth-child(6) {
+.moniteur-mire-gris-fonce {
   background-color: var(--couleur-bordure-champ);
 }
 
-.moniteur-mires span:nth-child(7) {
+.moniteur-mire-noire {
   background-color: var(--couleur-surface-claire);
 }
 
@@ -123,8 +128,9 @@
   text-transform: uppercase;
   border: 1px solid var(--couleur-erreur);
   border-radius: var(--rayon-petit);
-  /* Clignote trois fois au chargement, comme un signal perdu, puis reste affiché */
-  animation: moniteur-clignotement 1s steps(2, jump-none) 3;
+  /* Clignote trois fois au chargement, comme un signal perdu, puis reste affiché.
+     Le chiffre 3 à la fin est le nombre de répétitions. */
+  animation: moniteur-clignotement 0.8s ease-in-out 3;
 }
 
 .moniteur-timecode {
@@ -136,6 +142,7 @@
   font-size: var(--taille-texte-petit);
 }
 
+/* Au début et à la fin, le message est entièrement visible : seul le milieu change */
 @keyframes moniteur-clignotement {
   50% {
     opacity: 0.3;

@@ -37,14 +37,15 @@ function PageIntrouvable() {
 
         {/* Moniteur de prévisualisation : purement décoratif, donc caché aux lecteurs d'écran */}
         <div className="moniteur" aria-hidden="true">
+          {/* Les bandes de couleur d'une mire de test, de gauche à droite */}
           <div className="moniteur-mires">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className="moniteur-mire moniteur-mire-blanche"></span>
+            <span className="moniteur-mire moniteur-mire-ambre"></span>
+            <span className="moniteur-mire moniteur-mire-verte"></span>
+            <span className="moniteur-mire moniteur-mire-grise"></span>
+            <span className="moniteur-mire moniteur-mire-rouge"></span>
+            <span className="moniteur-mire moniteur-mire-gris-fonce"></span>
+            <span className="moniteur-mire moniteur-mire-noire"></span>
           </div>
           <p className="moniteur-message">Média hors ligne</p>
           <p className="moniteur-timecode">00:04:04:00</p>
