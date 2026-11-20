@@ -19,7 +19,7 @@ const listeDesEtapesDuParcours = [
   {
     periode: '2016 – 2018',
     titre: 'BTS Audiovisuel — Montage et post-production',
-    description: 'Lycée René Cassin, Biarritz. Stages en montage chez I.Mage Production (Bordeaux) et France 3 Bayonne.',
+    description: 'Lycée René Cassin, Biarritz. Stages chez I.Mage Production (Bordeaux) et France 3 Bayonne : dérushage, montage, motion design.',
     estEnCours: false,
   },
   {

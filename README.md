@@ -17,7 +17,7 @@ au métier de développeur.
 | Styles | CSS natif, un fichier par composant | Les variables CSS suffisent, une dépendance de moins que Sass |
 | Animations | CSS natif | Légères, coupées si le visiteur réduit les animations |
 | Formulaire | Formspree | Envoi réel par e-mail sans serveur à coder |
-| Hébergement | GitHub Pages | Gratuit, et GitHub Actions met le site à jour à chaque push sur main |
+| Hébergement | GitHub Pages + GitHub Actions | Gratuit et relié au dépôt : chaque push sur `main` reconstruit et publie le site |
 
 Dépendances : `react` et `react-dom`, plus `vite` et `@vitejs/plugin-react` pour le développement. Rien d'autre.
 

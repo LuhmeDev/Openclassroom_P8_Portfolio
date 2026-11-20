@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Plan du site : la liste des pages à indexer, pour les moteurs de recherche -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://luhmedev.github.io/Openclassroom_P8_Portfolio/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
   <url>
     <loc>https://luhmedev.github.io/Openclassroom_P8_Portfolio/mentions-legales/</loc>
+    <lastmod>2026-11-20</lastmod>
   </url>
 </urlset>

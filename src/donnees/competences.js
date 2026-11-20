@@ -26,11 +26,11 @@ const listeDesCategoriesDeCompetences = [
   },
   {
     nom: 'Audiovisuel',
-    competences: ['Montage', 'Post-production', 'After Effects', 'DaVinci Resolve'],
+    competences: ['Montage', 'Post-production', 'Dérushage', 'Motion design', 'After Effects', 'DaVinci Resolve'],
   },
   {
     nom: 'Compétences humaines',
-    competences: ['Relation client', 'Rigueur et organisation', 'Adaptabilité'],
+    competences: ['Relation client', 'Rigueur et organisation', 'Souci du détail', 'Adaptabilité'],
   },
 ]
 

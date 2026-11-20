@@ -63,7 +63,7 @@ const listeDesProjets = [
       resultats: [
         '37 modules JavaScript, 137 commits entre août et octobre 2026.',
         '2 747 contrôles automatisés, tous au vert (mesuré le 26 octobre 2026).',
-        'Application en bêta.',
+        'Application en version bêta.',
       ],
       ameliorations: [
         'Ajouter un cache local pour accélérer l\'affichage (prévu après la bêta).',
@@ -268,6 +268,10 @@ const listeDesProjets = [
         {
           probleme: "Les photos des cartes d'hébergement n'ont pas toutes les mêmes proportions : sans traitement, elles se déformaient ou débordaient des coins arrondis.",
           solution: "Après des recherches et des essais : hauteur fixe pour chaque taille d'écran, object-fit: cover pour recadrer sans déformer, et overflow: hidden pour garder les coins arrondis.",
+        },
+        {
+          probleme: 'Reproduire la maquette au pixel près : espacements, tailles de texte et alignements devaient correspondre exactement.',
+          solution: 'Comparaison régulière avec la maquette et ajustement fin des marges, des tailles et des alignements Flexbox.',
         },
       ],
       resultats: ['Page conforme à la maquette sur les trois tailles d\'écran.'],
