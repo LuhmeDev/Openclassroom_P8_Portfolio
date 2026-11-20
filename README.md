@@ -100,7 +100,7 @@ Visé : WCAG 2.2 niveau AA.
 | Lighthouse en ligne (4 catégories) | 100 | 100 | Navigation privée, sur GitHub Pages, octobre 2026 |
 | Console Chrome | 0 erreur | 0 erreur | Aucun message, aucun problème signalé (« No issues ») |
 
-Un score mesuré en local n'est qu'indicatif : refaire les mesures sur le site en ligne avant la soutenance.
+Les scores mesurés en local ont été confirmés sur le site en ligne.
 
 ## Configuration du formulaire
 

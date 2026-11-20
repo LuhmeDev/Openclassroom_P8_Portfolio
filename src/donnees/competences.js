@@ -1,7 +1,6 @@
 // Compétences affichées dans la section « Compétences ».
 // Chaque catégorie contient une liste de compétences.
 // Règle : n'ajouter que ce qui a réellement été utilisé dans un projet.
-// Les niveaux (à l'aise, bases solides, découverte) restent à valider par Kenny.
 
 const listeDesCategoriesDeCompetences = [
   {

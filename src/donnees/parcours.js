@@ -1,6 +1,6 @@
 // Étapes du parcours, de la plus récente à la plus ancienne.
 // estEnCours: true met l'étape en couleur d'accent sur la timeline.
-// Après la validation de la formation (tâche T38 du Kanban) :
+// Après la validation de la formation :
 // remplacer la période par « Obtenu en [mois année] » et passer estEnCours à false.
 
 const listeDesEtapesDuParcours = [
