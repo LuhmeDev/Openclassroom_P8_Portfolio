@@ -16,7 +16,7 @@ au métier de développeur.
 | Interface | React 19 + Vite 7 | React validé en formation, Vite rapide à lancer et à déployer |
 | Styles | CSS natif, un fichier par composant | Les variables CSS suffisent, une dépendance de moins que Sass |
 | Animations | CSS natif | Légères, coupées si le visiteur réduit les animations |
-| Formulaire | Formspree | Envoi réel par e-mail sans serveur à coder |
+| Formulaire | FormSubmit | Envoi réel par e-mail, gratuit, sans serveur ni inscription |
 | Hébergement | GitHub Pages + GitHub Actions | Gratuit et relié au dépôt : chaque push sur `main` reconstruit et publie le site |
 
 Dépendances : `react` et `react-dom`, plus `vite` et `@vitejs/plugin-react` pour le développement. Rien d'autre.
@@ -73,7 +73,7 @@ portfolio-kenny-lucas/
   Elle reprend l'écran « Média hors ligne » des logiciels de montage, et ses liens partent de `BASE_URL`
   car elle peut s'afficher à n'importe quelle adresse du site.
 - **Polices hébergées dans le projet** : aucun appel à Google Fonts, donc plus rapide et aucune donnée envoyée.
-- **Formulaire honnête** : tant que l'identifiant Formspree est vide, le formulaire l'indique au lieu de simuler
+- **Formulaire honnête** : tant que le destinataire FormSubmit est vide, le formulaire l'indique au lieu de simuler
   un envoi.
 
 ## Accessibilité
@@ -104,13 +104,17 @@ Les scores mesurés en local ont été confirmés sur le site en ligne.
 
 ## Configuration du formulaire
 
-Le formulaire n'est pas relié à Formspree pour la soutenance : il vérifie les champs, puis indique
-qu'il n'est pas encore configuré au lieu de simuler un envoi. Pour l'activer :
+Le formulaire envoie les messages via [FormSubmit](https://formsubmit.co), un service gratuit
+sans inscription. L'adresse de destination se règle dans `destinataireFormulaire`,
+dans `src/donnees/informations.js`.
 
-1. Créer un compte gratuit sur [formspree.io](https://formspree.io) avec l'adresse kennylucaspro@gmail.com.
-2. Créer un formulaire : Formspree donne une adresse du type `https://formspree.io/f/abcdwxyz`.
-3. Copier la fin (`abcdwxyz`) dans `identifiantFormspree`, dans `src/donnees/informations.js`.
-4. Envoyer un message de test depuis le site en ligne et confirmer la réception.
+1. Mettre le site en ligne, puis envoyer un premier message de test depuis le formulaire.
+   Ce premier envoi affiche une erreur : c'est normal, le formulaire n'est pas encore activé.
+2. Ouvrir l'e-mail « Action Required: Activate FormSubmit » reçu sur kennylucaspro@gmail.com
+   (regarder aussi dans les spams) et cliquer sur « Activate Form ». À faire une seule fois.
+3. Facultatif : l'e-mail d'activation donne un alias (une suite de lettres et de chiffres).
+   Le coller dans `destinataireFormulaire` à la place de l'adresse, pour qu'elle n'apparaisse plus dans le code.
+4. Renvoyer un message de test et confirmer la réception.
 
 ## Auteur
 

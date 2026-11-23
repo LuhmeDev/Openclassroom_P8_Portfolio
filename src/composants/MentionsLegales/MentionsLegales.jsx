@@ -52,7 +52,7 @@ function MentionsLegales() {
             utilisées à des fins commerciales.
           </p>
           <p>
-            Les messages transitent par le service Formspree, qui les transmet par e-mail.
+            Les messages transitent par le service FormSubmit (formsubmit.co), qui les transmet par e-mail.
             Ils ne sont pas enregistrés sur ce site.
           </p>
           <p>

@@ -1,9 +1,9 @@
 // Section « Contact » : coordonnées et formulaire.
 //
-// Le formulaire envoie le message au service Formspree, qui le transfère par e-mail.
-// Il n'y a donc aucun serveur à coder. Tant que l'identifiant Formspree n'est pas
-// renseigné dans donnees/informations.js, le formulaire le dit clairement :
-// on ne fait jamais croire à un envoi qui n'a pas eu lieu.
+// Le formulaire envoie le message au service FormSubmit, qui le transfère par e-mail.
+// Il n'y a donc aucun serveur à coder, et ni compte ni inscription à créer.
+// Tant que le destinataire n'est pas renseigné dans donnees/informations.js,
+// le formulaire le dit clairement : on ne fait jamais croire à un envoi qui n'a pas eu lieu.
 import { useState, useRef } from 'react'
 import informations from '../../donnees/informations.js'
 import './Contact.css'
@@ -79,19 +79,21 @@ function Contact() {
       return
     }
 
-    if (informations.identifiantFormspree === '') {
+    if (informations.destinataireFormulaire === '') {
       setEtatEnvoi('non-configure')
       return
     }
 
     setEtatEnvoi('envoi-en-cours')
 
-    // Le champ « _gotcha » est un piège à robots : invisible pour les humains,
-    // s'il est rempli, Formspree ignore le message.
-    const champPiege = evenement.target.elements._gotcha.value
+    // Le champ « _honey » est un piège à robots : invisible pour les humains,
+    // s'il est rempli, FormSubmit ignore le message.
+    const champPiege = evenement.target.elements._honey.value
 
     try {
-      const reponse = await fetch('https://formspree.io/f/' + informations.identifiantFormspree, {
+      // Adresse « ajax » de FormSubmit : elle répond en JSON au lieu d'ouvrir une autre page,
+      // ce qui permet d'afficher le résultat directement sous le bouton.
+      const reponse = await fetch('https://formsubmit.co/ajax/' + informations.destinataireFormulaire, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -101,11 +103,18 @@ function Contact() {
           nom: nom,
           email: email,
           message: message,
-          _gotcha: champPiege,
+          _honey: champPiege,
+          // Options FormSubmit : objet de l'e-mail reçu et mise en page en tableau
+          _subject: 'Nouveau message depuis le portfolio',
+          _template: 'table',
         }),
       })
 
-      if (reponse.ok) {
+      // FormSubmit renvoie { success: "true" } quand le message est bien parti.
+      // Avant l'activation (premier envoi), il renvoie success: "false" : on affiche alors une erreur.
+      const resultat = await reponse.json()
+
+      if (reponse.ok && String(resultat.success) === 'true') {
         setEtatEnvoi('succes')
         setNom('')
         setEmail('')
@@ -114,7 +123,7 @@ function Contact() {
         setEtatEnvoi('erreur')
       }
     } catch {
-      // Pas de connexion internet, ou Formspree injoignable
+      // Pas de connexion internet, ou FormSubmit injoignable
       setEtatEnvoi('erreur')
     }
   }
@@ -219,7 +228,7 @@ function Contact() {
           </div>
 
           {/* Piège à robots : caché aux humains et aux lecteurs d'écran */}
-          <input className="contact-piege" type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+          <input className="contact-piege" type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
           <button className="bouton-principal" type="submit" disabled={etatEnvoi === 'envoi-en-cours'}>
             Envoyer le message
@@ -230,7 +239,7 @@ function Contact() {
 
           <p className="contact-mention">
             Vos informations servent uniquement à vous répondre. Elles transitent par le service
-            Formspree. Détails dans les <a href={import.meta.env.BASE_URL + 'mentions-legales/'}>mentions légales</a>.
+            FormSubmit. Détails dans les <a href={import.meta.env.BASE_URL + 'mentions-legales/'}>mentions légales</a>.
           </p>
         </form>
       </div>
